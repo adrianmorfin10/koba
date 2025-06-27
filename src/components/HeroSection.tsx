@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import CTAButton from './CTAButton';
-import heroImage from '@/public/hero.png'; // Asegúrate de tener la imagen en /public
 
 const HeroSection = () => {
   return (
@@ -9,7 +8,7 @@ const HeroSection = () => {
       {/* Imagen de fondo optimizada */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={heroImage}
+          src="/hero.png" // Usa la ruta directa desde public
           alt="Fondo hero"
           quality={85}
           priority
@@ -18,6 +17,7 @@ const HeroSection = () => {
         />
       </div>
       
+      {/* Resto del componente permanece igual */}
       <div className="container mx-auto px-6 h-full flex items-center relative z-10 pt-[72px]">
         <div className="max-w-2xl">
           <h1 className="text-5xl md:text-6xl mb-4 leading-tight" style={{ fontFamily: 'Play, sans-serif' }}>
