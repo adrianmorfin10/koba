@@ -35,7 +35,7 @@ const CTAButton = ({
           'bg-gradient-to-r from-[#FF4646] to-[#FF6B6B] hover:from-[#E03E3E] hover:to-[#FF5757] rounded-tl-[15px]' : 
           'bg-[#FF4646]/15 rounded-none'
         }
-        ${small ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base'}
+        ${small ? 'px-6 py-2 text-sm' : 'px-6 py-3 text-base'}
         text-white
         font-bold
         transition-all
