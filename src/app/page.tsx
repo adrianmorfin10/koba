@@ -1,12 +1,10 @@
 'use client';
-
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import ProductCard from '../components/ProductCard';
 import HotProducts from '@/components/HotProducts';
 import Footer from '@/components/footer';
 import CompraSeguraSection from '@/components/CompraSeguraSection';
-
 
 export default function Home() {
   const products = [
@@ -27,26 +25,33 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#141414]">
+    <>
       <Header />
-      <HeroSection />
-      <HotProducts />
-      
-      <section className="py-16 container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ fontFamily: 'Play, sans-serif' }}>
-          <span style={{ color: '#FF4646' }}>N</span>
-          <span>uestros productos</span>
-        </h2>
+      <main>
+        <HeroSection />
+        <HotProducts />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {products.map(product => (
-            <ProductCard key={product.id} product={product} />
-           
-          ))}
-        </div>
-      </section>
-      <CompraSeguraSection /> {/* Esta nueva sección */}
+        {/* Sección de Productos (añade id para navegación) */}
+        <section id="productos" className="py-16 container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{ fontFamily: 'Play, sans-serif' }}>
+            <span style={{ color: '#FF4646' }}>N</span>
+            <span>uestros productos</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {products.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+
+        {/* Añade más secciones con IDs según necesites */}
+        <section id="nosotros">{/* ... */}</section>
+        <section id="contacto">{/* ... */}</section>
+
+        <CompraSeguraSection />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }

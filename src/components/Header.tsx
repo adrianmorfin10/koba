@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -7,8 +8,16 @@ export default function Header() {
         <span className="text-[#FF4646]">K</span>OBA
       </div>
       <nav className="hidden md:flex gap-8">
-        <a href="#productos" className="text-white hover:text-[#FF4646] transition-colors duration-300">Productos</a>
-        <a href="#nosotros" className="text-white hover:text-[#FF4646] transition-colors duration-300">Nosotros</a>
+        <Link href="#productos" scroll={false}>
+          <a className="text-white hover:text-[#FF4646] transition-colors duration-300">
+            Productos
+          </a>
+        </Link>
+        <Link href="#nosotros" scroll={false}>
+          <a className="text-white hover:text-[#FF4646] transition-colors duration-300">
+            Nosotros
+          </a>
+        </Link>
       </nav>
     </header>
   );
