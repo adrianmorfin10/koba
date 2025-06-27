@@ -1,14 +1,22 @@
 'use client';
-
+import Image from 'next/image';
 import CTAButton from './CTAButton';
+import heroImage from '@/public/hero.png'; // Asegúrate de tener la imagen en /public
 
 const HeroSection = () => {
   return (
     <section className="relative bg-black text-white h-[80vh] min-h-[500px] w-full mt-0">
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-90"
-        style={{ backgroundImage: "url('/hero.png')" }}
-      />
+      {/* Imagen de fondo optimizada */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={heroImage}
+          alt="Fondo hero"
+          quality={85}
+          priority
+          fill
+          className="object-cover object-center opacity-90"
+        />
+      </div>
       
       <div className="container mx-auto px-6 h-full flex items-center relative z-10 pt-[72px]">
         <div className="max-w-2xl">
@@ -28,7 +36,7 @@ const HeroSection = () => {
             Diseñamos ropa deportiva de alto rendimiento para que lleves tu entrenamiento al máximo nivel
           </p>
           
-          <div className="flex flex-col sm:flex-row">
+          <div className="flex flex-col sm:flex-row gap-4">
             <CTAButton 
               text="Comprar ahora" 
               onClick={() => window.open('https://mercadolibre.com/YOUR_SHOP_LINK', '_blank')}
